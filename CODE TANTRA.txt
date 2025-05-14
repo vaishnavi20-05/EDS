@@ -1,0 +1,162 @@
+CODE TANTRA
+1.1.1. Calculate Momentum
+
+m= float(input())
+v= float(input())
+p = m*v
+print('%.2f'%p,end='')
+print("kgm/s")
+
+
+1.1.2. Conditional Calculation Based on the Number of Digits
+n = int(input())
+
+if 0 <= n <= 9: 
+	print(n * n)
+elif 10 <= n <= 99: 
+	print("%.2f" % (n**0.5))
+elif 100 <= n <= 999: 
+	print("%.2f" % (n**(1/3))
+else: 
+	print("Invalid")
+
+
+1.1.3. Age and Salary Calculation
+# import the required package
+
+#def calculate_age(birthdate):
+	# Write your code here
+	
+
+
+
+#def convert_salary_to_dollars(salary_in_rupees):
+	# write your code here 
+	
+	
+
+#birthdate = input()
+# salary_in_rupees = float(input())
+# age = calculate_age(birthdate)
+# salary_in_dollars = convert_salary_to_dollars(salary_in_rupees)
+# print(f"Age: {age}")
+# print(f"Salary in dollars: {salary_in_dollars:.2f}")
+from datetime import datetime
+
+def calculate_age(birthdate):
+	birth_date = datetime.strptime(birthdate, "%d-%m-%Y")
+	today = datetime.today()
+	age = today.year - birth_date.year - ((today.month, today.day) < (birth_date.month, birth_date.day))
+	return age
+
+def convert_salary_to_dollars(salary_in_rupees):
+	INR_TO_USD = 0.012
+	return salary_in_rupees * INR_TO_USD
+
+
+birthdate = input()
+salary_in_rupees = float(input())
+
+
+age = calculate_age(birthdate)
+salary_in_dollars = convert_salary_to_dollars(salary_in_rupees)
+
+
+print(f"Age: {age}")
+print(f"Salary in dollars: {salary_in_dollars:.2f}")
+
+
+1.1.4. Reverse a Number
+def reverse_number(n):
+    """
+    Reverses the digits of an integer.
+
+    Args:
+        n: The integer to reverse.
+
+    Returns:
+        The reversed integer.
+    """
+
+    reversed_n = 0
+    while n > 0:
+        digit = n % 10  # Extract the last digit
+        reversed_n = reversed_n * 10 + digit  # Build the reversed number
+        n //= 10  # Remove the last digit from n
+
+    return reversed_n
+
+# Get input from the user
+num = int(input())
+
+# Reverse the number
+reversed_num = reverse_number(num)
+
+# Print the reversed number
+print(reversed_num)
+
+
+1.1.5. Multiplication Table
+def multiplication_table(n):
+    """Prints the multiplication table for a given integer from 1 to 10."""
+    for i in range(1, 11):  # Iterate from 1 to 10 (inclusive)
+        print(f"{n} x {i} = {n * i}")
+
+# Get input from the user
+num = int(input())
+
+# Print the multiplication table
+multiplication_table(num)
+
+
+1.2.1. Pass or Fail
+def calculate_grade(num_courses, marks):
+    if any(mark < 40 for mark in marks):
+        print("Fail")
+        return
+    
+    aggregate_percentage = sum(marks) / num_courses
+    
+    print(f"Aggregate Percentage: {aggregate_percentage:.2f}")
+    
+    if aggregate_percentage > 75:
+        print("Grade: Distinction")
+    elif aggregate_percentage >= 60:
+        print("Grade: First Division")
+    elif aggregate_percentage >= 50:
+        print("Grade: Second Division")
+    elif aggregate_percentage >= 40:
+        print("Grade: Third Division")
+    
+num_courses = int(input())
+marks = list(map(int, input().split()))
+
+
+calculate_grade(num_courses, marks)
+
+
+1.2.2. Fibonacci series using Recursive Function
+def fib(n):
+	if n<=1:
+		return n
+	else:
+		return fib(n-1)+fib(n-2)
+    
+    
+n=int(input("Enter terms for Fibonacci series: "))
+for i in range (n):
+      print(fib(i),end=" ")
+
+
+1.2.3. Pattern - 1
+num=int(input())
+for i in range(1,num+1):
+	print("* "*i)
+
+
+1.2.4. Pattern - 2
+n=int(input())
+for i in range(1,n+1,):
+	for j in range(1,i+1,):
+		print(j,end=' ')
+	print()

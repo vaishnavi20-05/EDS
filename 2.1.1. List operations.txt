@@ -1,0 +1,136 @@
+2.1.1. List operations
+def main():
+    integer_list = []
+    
+    while True:
+        print("1. Add")
+        print("2. Remove")
+        print("3. Display")
+        print("4. Quit")
+        
+        choice = input("Enter choice: ")
+        
+        if choice == "1":
+            num = input("Integer: ")
+            if num.lstrip('-').isdigit():  # Check if input is a valid integer
+                integer_list.append(int(num))
+                print(f"List after adding: {integer_list}")
+            else:
+                print("Invalid input")
+        
+        elif choice == "2":
+            if not integer_list:
+                print("List is empty")
+            else:
+                num = input("Integer: ")
+                if num.lstrip('-').isdigit():
+                    num = int(num)
+                    if num in integer_list:
+                        integer_list.remove(num)
+                        print(f"List after removing: {integer_list}")
+                    else:
+                        print("Element not found")
+                else:
+                    print("Invalid input")
+        
+        elif choice == "3":
+            if not integer_list:
+                print("List is empty")
+            else:
+                print(integer_list)
+        
+        elif choice == "4":
+            break
+        
+        else:
+            print("Invalid choice")
+
+if __name__ == "__main__":
+    main()
+
+
+2.1.2. Dictionary Operations
+# 1. Create an empty dictionary and display it
+my_dict = {}
+print("Empty Dictionary:", my_dict)
+
+# 2. Ask the user how many items to add, then input key-value pairs
+size = int(input("Number of items: "))
+for _ in range(size):
+    key=input("key: ")
+    value=input("value: ")
+    my_dict[key]=value
+# 3. Show the dictionary after adding items
+print("Dictionary:", my_dict)
+
+# 4. Update a key's value
+key_to_update = input("Enter the key to update: ")
+if key_to_update in my_dict:
+    new_value=input("Enter the new value: ")
+    my_dict[key_to_update]=new_value
+    print("Value updated")
+else:
+    print("Key not found")
+
+
+
+# 5. Retrieve and print a value using a key
+key_to_access = input("Enter the key to retrieve: ")
+if key_to_access in my_dict:
+    print(f"Key: {key_to_access}",end=", ")
+    print(f'Value: {my_dict[key_to_access]}')
+else:
+    print("Key not found")
+
+
+
+# 6. Use `get()` to retrieve a value
+key_to_get = input("Enter the key to get using the get() method: ")
+if key_to_get in my_dict:
+    print(f"Key: {key_to_get}",end=", ")
+    value=my_dict.get(key_to_get)
+    print(f"Value: {value}",end="\n")
+else:
+    print("key not found")
+
+
+
+# 7. Delete a key-value pair
+key_to_delete = input("Enter the key to delete: ")
+if key_to_delete in my_dict:
+    my_dict.pop(key_to_delete)
+    print("Deleted",end="\n")
+else:
+    print("Key not found")
+
+
+
+# 8. Display the updated dictionary
+print("Updated Dictionary:", my_dict)
+
+
+
+
+2.2.1. Linear search Technique
+def linear_search(arr, key):
+	for index in range(len(arr)):
+		if arr[index] == key:
+			return index
+	return "Not found"
+arr = list(map(int, input().split()))
+key = int(input())
+result = linear_search(arr, key)
+print(result)
+
+
+2.2.2. Captain of the Team
+# Taking input of 11 integers separated by space
+heights = list(map(int, input().split()))
+
+# Finding the maximum height
+captain_height = max(heights)
+
+# Printing the height of the tallest player
+print(captain_height)
+
+
